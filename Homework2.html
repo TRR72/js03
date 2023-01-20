@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+/*  Необходимо с помощью цикла for вывести следующие 11 строк в консоль:
+ 0 – это ноль
+ 1 – нечетное число
+ 2 – четное число
+ 3 – нечетное число
+ …
+ 10 – четное число */
+
+
+    for (let i = 0; i < 11; i++) {
+        if (i === 0) {
+            console.log(`${i} - Это ноль`);
+        } else if (i % 2 === 0) {
+            console.log(`${i} - Четное число`);
+        }
+        else {
+            console.log(`${i} - Нечетное число`);
+        }
+    }
+
+
+ /* Дан массив [1, 2, 3, 4, 5, 6, 7]
+ Сделайте из этого массива следующий [1, 2, 3, 6, 7]
+ */
+
+    const array = [1, 2, 3, 4, 5, 6, 7];
+        array.splice(3, 2);
+        console.log(array);
+
+
+/*  Используя Math.random() вам необходимо генерировать цифры от 0 до 9, 
+ и создать массив состоящий из 5 таких элементов
+1. Рассчитать сумму элементов этого массива
+2. Найти минимальное число
+3. Найти есть ли в этом массиве число 3 */
+
+    const GenerateArray = (length, max) => (
+        [...new Array(length)]
+            .map(() => Math.round(Math.random() * max))
+    );
+    const newArray = GenerateArray(5, 9);
+    console.log(newArray);
+
+    add = function (newArray) {
+        return newArray.reduce((a, b) => a + b, 0);
+    };
+
+    const sum = add(newArray);
+    console.log(sum);
+
+    const minValue = Math.min(...newArray);
+    console.log(minValue);
+
+    console.log(newArray.indexOf(3));
+    newArray.includes(3);
+    </script>
+    
+    
+</body>
+</html>
